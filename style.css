@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* { box-sizing: border-box; }
+
+.fondo-webp {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    object-fit: cover; z-index: -1; opacity: 0.9;
+}
+
+body {
+    margin: 0; min-height: 100vh; background: transparent;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* TÍTULO */
+.contenedor-titulo { margin-bottom: 10px; z-index: 10; }
+.logo-titulo { width: 500px; max-width: 90vw; image-rendering: pixelated; }
+
+/* VENTANA PARA MENÚ ÚNICAMENTE */
+.contenedor-ventana {
+    position: relative; width: 392px; height: 462px; display: none;
+    align-items: center; justify-content: center;
+}
+#menu { display: flex; }
+
+/* CONTENEDOR SIN VENTANA (Para juego y stats) */
+.contenedor-sin-ventana {
+    width: 392px; height: 462px; display: none;
+    align-items: center; justify-content: center;
+}
+
+.contenido-juego, .contenido-juego-limpio {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; align-items: center;
+    padding-top: 80px; padding-left: 15px; padding-right: 15px;
+    position: relative; z-index: 1;
+}
+
+/* BOTONES MENÚ */
+.botones-menu {
+    display: flex; flex-direction: column; width: 80%; gap: 25px; align-items: center; margin-top: 10px;
+}
+.contenedor-boton { position: relative; width: 200px; height: auto; cursor: pointer; display: inline-block; line-height: 0; }
+.base-boton { width: 100%; height: auto; display: block; image-rendering: pixelated; position: relative; z-index: 1; }
+.boton-presionable {
+    position: absolute; top: -15px; left: 11px; width: 180px; height: auto;
+    image-rendering: pixelated; transition: transform 0.08s ease; z-index: 2; cursor: pointer;
+}
+.boton-presionable:active { transform: translate(6px, 6px); }
+
+/* Botón invisible */
+.boton-invisible {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: transparent; border: none; cursor: pointer; z-index: 10; padding: 0; margin: 0;
+}
+
+/* CRÉDITOS MÁS GRANDE Y MOVIDO */
+.btn-creditos { width: 240px !important; }
+.btn-creditos .boton-presionable { width: 220px !important; top: -15px !important; left: 12px !important; }
+.btn-creditos .base-boton { margin-top: -5px !important; margin-left: 2px !important; }
+
+/* JUEGO - ESTILOS */
+.titulo-ventana { display: none; }
+
+/* ZONA DEL PERSONAJE */
+#zona-personaje {
+    width: 90%; 
+    max-width: 200px; 
+    aspect-ratio: 1 / 1;
+    background-image: url('assets/hominido.png'); 
+    background-size: contain;
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: transparent; 
+    border: none; 
+    padding: 0;
+}
+
+.mono-evolutivo { 
+    width: 65%; 
+    height: auto; 
+    image-rendering: pixelated; 
+    display: block; 
+}
+
+/* Rollo Subido y Centrado */
+.contenedor-nombre {
+    position: relative; width: 60%; max-width: 200px;
+    display: flex; justify-content: center; align-items: center;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+.img-rollo { width: 100%; image-rendering: pixelated; display: block; }
+.texto-sobre-rollo {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    width: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: none;
+    -webkit-text-stroke: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* PREGUNTA */
+.texto-pixel-borde {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    text-align: center;
+    color: #000000;
+    width: 90%;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    -webkit-text-stroke: 0px;
+    text-shadow: none;
+}
+
+/* OPCIONES CON MARCO DE IMAGEN */
+.opciones {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 8px;
+}
+
+.opcion-contenedor {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.08s ease;
+}
+
+.opcion-contenedor:active {
+    transform: translateY(2px);
+}
+
+.marco-opcion {
+    width: 60%;
+    height: auto;
+    image-rendering: pixelated;
+    display: block;
+    z-index: 1;
+}
+
+.texto-opcion {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: #000;
+    text-align: center;
+    width: 55%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.capa-color {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 100%;
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    border-radius: 4px;
+}
+
+.opcion-contenedor.correcta .capa-color {
+    background: #4CAF50;
+    opacity: 0.5;
+}
+
+.opcion-contenedor.incorrecta .capa-color {
+    background: #F44336;
+    opacity: 0.5;
+}
+
+/* BOTÓN VOLVER */
+.boton-volver {
+    margin-top: 10px; padding: 6px 10px;
+    font-family: 'Press Start 2P', cursive; font-size: 10px;
+    background: #e0e0e0; border: 3px solid #000; cursor: pointer;
+}
+.boton-volver:active { transform: translateY(3px); }
+
+/* OCULTAR PANTALLAS Y ESTILOS COMUNES */
+.pantalla { display: none; }
+.texto-stats { font-size: 11px; color: #000; margin: 5px 0; }
+
+/* --- CONTENEDOR DE LA PREGUNTA (con marco) --- */
+.contenedor-pregunta {
+    position: relative;
+    width: 90%;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.marco-pregunta {
+    width: 300px;
+    height: 85px;
+    image-rendering: pixelated;
+    display: block;
+    z-index: 1;
+}
+
+.texto-sobre-pregunta {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: #000;
+    text-align: center;
+    width: 80%;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 2;
+    line-height: 1.4;
+    pointer-events: none;
+}
+
+/* --- PANTALLA DE CRÉDITOS --- */
+
+/* Fondo de la ventana */
+#creditos .img-fondo-ventana {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    z-index: 0;
+}
+
+/* Contenido encima de la ventana */
+#creditos .contenido-juego {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Lista de Instagram */
+.lista-creditos {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Cada enlace */
+.link-ig {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.1s ease;
+}
+
+.link-ig:active {
+    transform: translateY(2px);
+}
+
+.marco-link {
+    width: 50%;
+    height: auto;
+    image-rendering: pixelated;
+    display: block;
+    z-index: 1;
+    mix-blend-mode: multiply;
+}
+
+/* Contenedor del icono y el texto */
+.contenido-link {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.icono-ig {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    image-rendering: auto;
+}
+
+.texto-link {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px;
+    color: #000;
+    text-align: center;
+}
+
+/* Botón Volver */
+.boton-volver-contenedor {
+    position: relative;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.boton-volver-contenedor:active {
+    transform: translateY(2px);
+}
+
+.marco-boton-volver {
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    display: block;
+    z-index: 1;
+    mix-blend-mode: multiply;
+}
+
+.texto-boton-volver {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px;
+    color: #000;
+    text-align: center;
+    width: 90%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ============================================ */
+/* PANTALLA DE SELECCIÓN DE JUEGO */
+/* ============================================ */
+
+.opciones-seleccion {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 300px;
+    gap: 30px;
+    align-items: center;
+}
+
+.opcion-juego {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.opcion-juego:active {
+    transform: translateY(3px);
+}
+
+/* Imagen de prueba arriba del botón */
+.imagen-preview {
+    width: 80%;
+    max-width: 200px;
+    height: auto;
+    image-rendering: pixelated;
+    margin-bottom: 10px;
+    border: 3px solid #000;
+    background: #fff;
+}
+
+/* El marco del botón */
+.marco-opcion-seleccion {
+    width: 70%;
+    height: auto;
+    image-rendering: pixelated;
+    display: block;
+    z-index: 1;
+}
+
+/* El texto encima del marco */
+.texto-seleccion {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px;
+    color: #000;
+    text-align: center;
+    width: 65%;
+    bottom: 12%;
+    z-index: 2;
+    pointer-events: none;
+    line-height: 1.2;
+}
+
+/* ============================================ */
+/* BARRA DE PROGRESO */
+/* ============================================ */
+.contenedor-progreso {
+    width: 90%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.nombre-bloque {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: #000;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 15px;
+    background: #ddd;
+    border: 3px solid #000;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+#barra-progreso-relleno {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    transition: width 0.3s ease;
+}
+
+.progreso-texto {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px;
+    color: #000;
+    margin-top: 5px;
+}
+
+/* ============================================ */
+/* IMAGEN DE LA PREGUNTA */
+/* ============================================ */
+.contenedor-imagen-pregunta {
+    width: 90%;
+    max-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#imagen-pregunta {
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    border: 4px solid #000;
+    border-radius: 4px;
+    background: #fff;
+}
+/* ============================================ */
+/* POPUP DE CARTA DESBLOQUEADA */
+/* ============================================ */
+#popup {
+    position: fixed; /* ¡CAMBIO! Fixed para que cubra TODA la pantalla */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.85); /* Un poco más oscuro */
+    backdrop-filter: blur(5px);
+    z-index: 9999; /* ¡MUY ALTO! Para que esté por encima de TODO */
+}
+
+#popup .popup-contenido {
+    background: #fdf5e6;
+    padding: 25px;
+    border: 6px solid #8b4513;
+    text-align: center;
+    width: 90%;
+    max-width: 320px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.popup-imagen {
+    width: 60%;
+    max-width: 180px;
+    height: auto;
+    image-rendering: pixelated;
+    margin: 10px 0;
+    border: 3px solid #000;
+    border-radius: 4px;
+}
+
+#nueva-etapa-titulo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: #000;
+    margin: 10px 0;
+}
+
+/* ELEMENTOS OCULTOS */
+.oculto {
+    display: none !important;
+}

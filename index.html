@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homo Evolution</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- FONDO ANIMADO WEBP -->
+    <img src="assets/fondo.webp" class="fondo-webp" alt="Fondo animado" draggable="false">
+
+    <!-- TÍTULO -->
+    <div class="contenedor-titulo">
+        <img src="assets/titulo.png" alt="Homo Mania" class="logo-titulo" draggable="false">
+    </div>
+
+    <!-- MENÚ PRINCIPAL -->
+    <main id="menu" class="contenedor-ventana">
+        <div class="contenido-juego">
+            <div class="botones-menu">             
+                <!-- JUGAR -->
+<div class="contenedor-boton">
+    <img src="assets/base_jugar.png" class="base-boton" draggable="false">
+    <img src="assets/boton_jugar.png" class="boton-presionable" draggable="false">
+    <button class="boton-invisible" onclick="irASeleccion()"></button> <!-- ¡CAMBIO ACÁ! -->
+</div>
+                <!-- CREDITS -->
+                <div class="contenedor-boton btn-creditos">
+                    <img src="assets/base_credits.png" class="base-boton" draggable="false">
+                    <img src="assets/boton_credits.png" class="boton-presionable" draggable="false">
+                    <button class="boton-invisible" onclick="creditos()"></button>
+                </div>
+                <!-- STATS -->
+                <div class="contenedor-boton">
+                    <img src="assets/base_stats.png" class="base-boton" draggable="false">
+                    <img src="assets/boton_stats.png" class="boton-presionable" draggable="false">
+                    <button class="boton-invisible" onclick="estadisticas()"></button>
+                </div>
+            </div>
+        </div>
+    </main>
+<!-- ============================================ -->
+<!-- NUEVA PANTALLA: SELECCIÓN DE JUEGO -->
+<!-- ============================================ -->
+<main id="seleccion-juego" class="pantalla contenedor-sin-ventana">
+    <div class="contenido-juego-limpio">
+        <h2 class="titulo-ventana" style="display: block; margin-bottom: 30px;">ELEGÍ TU JUEGO</h2>
+        
+        <div class="opciones-seleccion">
+            <!-- OPCIÓN 1: QUIZ -->
+            <div class="opcion-juego" onclick="jugar()">
+                <img src="assets/placeholder_quiz.png" class="imagen-preview" draggable="false">
+                <img src="assets/marco_opcion.png" class="marco-opcion-seleccion" draggable="false">
+                <div class="texto-seleccion">QUIZ DE EVOLUCIÓN</div>
+            </div>
+
+            <!-- OPCIÓN 2: RUN (por ahora no hace nada) -->
+            <div class="opcion-juego" onclick="irAlRun()">
+                <img src="assets/placeholder_run.png" class="imagen-preview" draggable="false">
+                <img src="assets/marco_opcion.png" class="marco-opcion-seleccion" draggable="false">
+                <div class="texto-seleccion">HOMO MANIA RUN</div>
+            </div>
+        </div>
+
+        <button class="boton-volver" onclick="volverMenu()" style="margin-top: 30px;">← VOLVER</button>
+    </div>
+</main>
+
+    <!-- PANTALLA DEL JUEGO (QUIZ) -->
+<main id="juego" class="pantalla contenedor-sin-ventana">
+    <div class="contenido-juego-limpio">
+        
+        <!-- BARRA DE PROGRESO -->
+        <div class="contenedor-progreso">
+            <div class="nombre-bloque">
+                <span id="nombre-etapa">HOMÍNIDO</span>
+            </div>
+            <div class="barra-progreso">
+                <div id="barra-progreso-relleno"></div>
+            </div>
+            <div class="progreso-texto">
+                <span id="progreso-texto">0/3</span>
+            </div>
+        </div>
+
+        <!-- IMAGEN DE LA PREGUNTA (Carta actual) -->
+        <div class="contenedor-imagen-pregunta">
+            <img id="imagen-pregunta" src="assets/pregunta_hominido1.png" draggable="false">
+        </div>
+
+        <!-- TEXTO DE LA PREGUNTA -->
+        <div class="contenedor-pregunta">
+            <img src="assets/marco_pregunta.png" class="marco-pregunta" draggable="false">
+            <div id="pregunta-texto" class="texto-sobre-pregunta">Cargando pregunta...</div>
+        </div>
+
+        <!-- OPCIONES -->
+        <div class="opciones">
+            <div class="opcion-contenedor" onclick="responder(0)">
+                <img src="assets/marco_opcion.png" class="marco-opcion" draggable="false">
+                <div class="texto-opcion">Opción A</div>
+                <div class="capa-color"></div>
+            </div>
+            <div class="opcion-contenedor" onclick="responder(1)">
+                <img src="assets/marco_opcion.png" class="marco-opcion" draggable="false">
+                <div class="texto-opcion">Opción B</div>
+                <div class="capa-color"></div>
+            </div>
+            <div class="opcion-contenedor" onclick="responder(2)">
+                <img src="assets/marco_opcion.png" class="marco-opcion" draggable="false">
+                <div class="texto-opcion">Opción C</div>
+                <div class="capa-color"></div>
+            </div>
+        </div>
+
+        <button class="boton-volver" onclick="volverMenu()">← VOLVER</button>
+    </div>
+
+    <!-- POPUP DE DESBLOQUEO DE CARTA -->
+    <div id="popup" class="oculto">
+        <div class="popup-contenido">
+            <h2>🃏 ¡NUEVA CARTA!</h2>
+            <img id="popup-imagen" src="assets/Mono1.png" class="popup-imagen" draggable="false">
+            <h3 id="nueva-etapa-titulo">HOMÍNIDO</h3>
+            <button onclick="cerrarPopup()">CONTINUAR</button>
+        </div>
+    </div>
+</main>
+
+    <!-- ESTADÍSTICAS -->
+    <main id="stats" class="pantalla contenedor-sin-ventana">
+        <div class="contenido-juego-limpio">
+            <h2 class="titulo-ventana">ESTADÍSTICAS</h2>
+            <p class="texto-stats">Acertijos: <span id="aciertos">0</span></p>
+            <p class="texto-stats">Etapa: <span id="etapa-actual">Inicio</span></p>
+            <button class="boton-volver" onclick="volverMenu()">← VOLVER</button>
+        </div>
+    </main>
+
+    <!-- CRÉDITOS -->
+    <main id="creditos" class="pantalla contenedor-ventana">
+        <!-- Fondo: ventanabeta.png 
+        <img src="assets/ventanabeta.png" class="img-fondo-ventana" draggable="false">
+        -->
+        <div class="contenido-juego">
+            <h2 class="titulo-ventana" style="margin-top: 10px;">CRÉDITOS</h2>
+            
+            <!-- LISTA DE INSTAGRAM (Con marco_opcion.png + icono + texto) -->
+            <div class="lista-creditos">
+                <a href="https://www.instagram.com/_1benja.ok" target="_blank" class="link-ig">
+                    <img src="assets/marco_opcion.png" class="marco-link" draggable="false">
+                    <div class="contenido-link">
+                        <img src="assets/ig_logo.png" class="icono-ig" draggable="false">
+                        <span class="texto-link">@_1benja.ok</span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/joaalca01" target="_blank" class="link-ig">
+                    <img src="assets/marco_opcion.png" class="marco-link" draggable="false">
+                    <div class="contenido-link">
+                        <img src="assets/ig_logo.png" class="icono-ig" draggable="false">
+                        <span class="texto-link">@joaalca01</span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/riptonki" target="_blank" class="link-ig">
+                    <img src="assets/marco_opcion.png" class="marco-link" draggable="false">
+                    <div class="contenido-link">
+                        <img src="assets/ig_logo.png" class="icono-ig" draggable="false">
+                        <span class="texto-link">@riptonki</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- BOTÓN VOLVER (Con marco_opcion.png) -->
+            <div class="boton-volver-contenedor" onclick="volverMenu()">
+                <img src="assets/marco_opcion.png" class="marco-boton-volver" draggable="false">
+                <span class="texto-boton-volver">← VOLVER</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="game.js"></script>
+</body>
+</html>
