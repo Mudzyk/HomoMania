@@ -56,98 +56,96 @@ const etapas = [
 const preguntas = [
 
     // ========================================================
-    // NIVEL 1 - HOMÍNIDO
-    // 6 preguntas
+    // NIVEL 1 - HOMÍNIDOS
     // ========================================================
 
     {
         bloque: 0,
         imagen: "assets/material/hominido_01.jpg",
-        pregunta: "¿Qué característica distingue especialmente a los primeros homínidos?",
+        pregunta: "¿Qué característica fue importante en la evolución humana?",
         opciones: [
+            "Volar",
             "Caminar sobre dos piernas",
-            "Vivir en ciudades",
-            "Usar vehículos"
+            "Vivir bajo el agua"
         ],
-        correcta: 0
+        correcta: 1
     },
 
     {
         bloque: 0,
-        imagen: "assets/material/hominido_02.jpg",
-        pregunta: "¿En qué continente se encuentran muchos de los fósiles más antiguos relacionados con la evolución humana?",
+        imagen: "assets/material/hominido_02.png",
+        pregunta: "¿En qué continente aparecieron muchos de los primeros antepasados humanos?",
         opciones: [
+            "Australia",
             "África",
-            "Europa",
-            "Oceanía"
+            "América"
         ],
-        correcta: 0
+        correcta: 1
     },
 
     {
         bloque: 0,
         imagen: "assets/material/hominido_03.jpg",
-        pregunta: "¿Qué parte del esqueleto ayuda especialmente a estudiar el bipedismo?",
+        pregunta: "¿Qué significa ser bípedo?",
         opciones: [
-            "La pelvis y las piernas",
-            "Las costillas",
-            "Los dedos de las manos"
+            "Caminar sobre cuatro patas",
+            "Vivir en los árboles",
+            "Caminar sobre dos piernas"
         ],
-        correcta: 0
+        correcta: 2
     },
 
     {
         bloque: 0,
-        imagen: "assets/material/hominido_04.png",
-        pregunta: "¿Qué significa que un homínido sea bípedo?",
+        imagen: "assets/material/hominido_04.jpg",
+        pregunta: "¿Qué estudian los científicos cuando encuentran fósiles humanos?",
         opciones: [
-            "Que camina principalmente sobre dos piernas",
-            "Que tiene dos cerebros",
-            "Que vive en dos continentes"
+            "Los planetas",
+            "La evolución humana",
+            "Los océanos"
         ],
-        correcta: 0
+        correcta: 1
     },
 
     {
         bloque: 0,
         imagen: "assets/material/hominido_05.jpg",
-        pregunta: "¿Qué se estudia principalmente mediante los fósiles de homínidos?",
+        pregunta: "¿Qué es un fósil?",
         opciones: [
-            "La evolución humana",
-            "La electricidad",
-            "La astronomía"
+            "Un animal que vive actualmente",
+            "Un resto o huella de un ser vivo del pasado",
+            "Una herramienta moderna"
         ],
-        correcta: 0
+        correcta: 1
     },
 
     {
         bloque: 0,
-        imagen: "assets/material/hominido_06.jpg",
-        pregunta: "¿Cuál de estos es un ejemplo de fósil relacionado con la evolución humana?",
+        imagen: "assets/material/hominido_06.avif",
+        pregunta: "¿Cuál de estos es un famoso fósil de un Australopithecus?",
         opciones: [
-            "Lucy",
-            "Tyrannosaurus rex",
-            "Triceratops"
+            "Dinosaurio",
+            "Mamut",
+            "Lucy"
         ],
-        correcta: 0
+        correcta: 2
     },
 
 
     // ========================================================
     // NIVEL 2 - AUSTRALOPITHECUS
-    // 6 preguntas
     // ========================================================
 
     {
         bloque: 1,
         imagen: "assets/material/australopithecus_01.jpg",
-        pregunta: "¿A qué especie pertenece Lucy?",
+        pregunta: "¿Quién era Lucy?",
         opciones: [
-            "Australopithecus afarensis",
-            "Homo sapiens",
-            "Homo erectus"
+            "Una Neandertal",
+            "Una persona actual",
+            "Una Australopithecus"
         ],
-        correcta: 0
+        correcta: 2
     },
 
     {
@@ -156,8 +154,8 @@ const preguntas = [
         pregunta: "¿Dónde fue encontrada Lucy?",
         opciones: [
             "Etiopía",
-            "España",
-            "Canadá"
+            "Argentina",
+            "España"
         ],
         correcta: 0
     },
@@ -167,45 +165,45 @@ const preguntas = [
         imagen: "assets/material/australopithecus_03.jpg",
         pregunta: "¿Hace aproximadamente cuánto tiempo vivió Lucy?",
         opciones: [
-            "3,2 millones de años",
-            "20.000 años",
-            "500 años"
+            "Hace 100 años",
+            "Hace más de 3 millones de años",
+            "Hace 500 años"
         ],
-        correcta: 0
+        correcta: 1
     },
 
     {
         bloque: 1,
-        imagen: "assets/material/australopithecus_04.png",
-        pregunta: "¿Qué especie representa Lucy?",
+        imagen: "assets/material/australopithecus_04.jpg",
+        pregunta: "¿Los Australopithecus podían caminar sobre dos piernas?",
         opciones: [
-            "Australopithecus afarensis",
-            "Homo habilis",
-            "Homo sapiens"
-        ],
-        correcta: 0
-    },
-
-    {
-        bloque: 1,
-        imagen: "assets/material/australopithecus_05.jpg",
-        pregunta: "¿Los Australopithecus podían caminar erguidos?",
-        opciones: [
-            "Sí",
             "No",
+            "Sí",
             "Solo podían nadar"
         ],
-        correcta: 0
+        correcta: 1
+    },
+
+    {
+        bloque: 1,
+        imagen: "assets/material/australopithecus_05.webp",
+        pregunta: "¿Los Australopithecus vivieron antes que los humanos actuales?",
+        opciones: [
+            "No",
+            "Vivieron al mismo tiempo que nosotros",
+            "Sí"
+        ],
+        correcta: 2
     },
 
     {
         bloque: 1,
         imagen: "assets/material/australopithecus_06.jpg",
-        pregunta: "¿Qué famosas huellas están relacionadas con Australopithecus afarensis?",
+        pregunta: "¿Qué era Lucy?",
         opciones: [
-            "Las huellas de Laetoli",
-            "Las huellas de Pompeya",
-            "Las huellas de Roma"
+            "Un fósil de Australopithecus afarensis",
+            "Un dinosaurio",
+            "Una herramienta de piedra"
         ],
         correcta: 0
     },
@@ -213,65 +211,64 @@ const preguntas = [
 
     // ========================================================
     // NIVEL 3 - HOMO HABILIS
-    // 6 preguntas
     // ========================================================
 
     {
         bloque: 2,
         imagen: "assets/material/habilis_01.jpg",
-        pregunta: "¿Qué significa aproximadamente 'Homo habilis'?",
+        pregunta: "¿Qué significa aproximadamente Homo habilis?",
         opciones: [
+            "Hombre de hielo",
             "Hombre hábil",
-            "Hombre gigante",
-            "Hombre del hielo"
+            "Hombre gigante"
         ],
-        correcta: 0
+        correcta: 1
     },
 
     {
         bloque: 2,
         imagen: "assets/material/habilis_02.jpg",
-        pregunta: "¿Con qué tipo de herramientas se relaciona especialmente Homo habilis?",
+        pregunta: "¿Qué utilizaba Homo habilis para fabricar herramientas?",
         opciones: [
-            "Herramientas de piedra simples",
-            "Espadas de hierro",
-            "Arcos modernos"
+            "Plástico",
+            "Vidrio",
+            "Piedra"
         ],
-        correcta: 0
+        correcta: 2
     },
 
     {
         bloque: 2,
         imagen: "assets/material/habilis_03.jpg",
-        pregunta: "¿Qué material utilizaban principalmente para fabricar las primeras herramientas?",
+        pregunta: "¿Para qué podían servir las herramientas de piedra?",
         opciones: [
-            "Piedra",
-            "Plástico",
-            "Acero"
+            "Para cortar y conseguir alimentos",
+            "Para usar electricidad",
+            "Para conducir"
         ],
         correcta: 0
     },
 
     {
         bloque: 2,
-        imagen: "assets/material/habilis_04.png",
-        pregunta: "¿Qué aparece en la tecnología Oldowan?",
+        imagen: "assets/material/habilis_04.jpg",
+        pregunta: "¿Homo habilis fabricaba herramientas?",
         opciones: [
-            "Percutores y lascas de piedra",
-            "Pistolas",
-            "Martillos eléctricos"
+            "No",
+            "Solo herramientas de plástico",
+            "Sí"
         ],
-        correcta: 0
+        correcta: 2
     },
 
     {
         bloque: 2,
         imagen: "assets/material/habilis_05.jpg",
-        pregunta: "¿Cómo era el cerebro de Homo habilis comparado con Australopithecus?",
+        pregunta: "¿Homo habilis vivió hace mucho tiempo?",
         opciones: [
-            "En general, mayor",
-            "Mucho menor",
-            "Exactamente igual"
+            "Sí",
+            "No, vivió hace pocos años",
+            "Vivió en la actualidad"
         ],
         correcta: 0
     },
@@ -279,119 +276,117 @@ const preguntas = [
     {
         bloque: 2,
         imagen: "assets/material/habilis_06.jpg",
-        pregunta: "¿Cuál de estos fósiles pertenece a Homo habilis?",
+        pregunta: "¿Qué era importante para Homo habilis?",
         opciones: [
-            "KNM-ER 1813",
-            "Lucy",
-            "Un Neandertal"
+            "Los teléfonos celulares",
+            "El uso de herramientas",
+            "Los autos"
         ],
-        correcta: 0
+        correcta: 1
     },
 
 
     // ========================================================
     // NIVEL 4 - HOMO ERECTUS
-    // 6 preguntas
     // ========================================================
 
     {
         bloque: 3,
-        imagen: "assets/material/erectus_01.jpg",
-        pregunta: "¿Qué significa 'Homo erectus'?",
+        imagen: "assets/material/erectus_01.webp",
+        pregunta: "¿Qué significa Homo erectus?",
         opciones: [
-            "Hombre erguido",
             "Hombre acuático",
-            "Hombre pequeño"
+            "Hombre erguido",
+            "Hombre volador"
         ],
-        correcta: 0
+        correcta: 1
     },
 
     {
         bloque: 3,
         imagen: "assets/material/erectus_02.jpg",
-        pregunta: "¿Qué especie se expandió fuera de África hacia otras regiones?",
+        pregunta: "¿Homo erectus podía caminar sobre dos piernas?",
         opciones: [
-            "Homo erectus",
-            "Australopithecus afarensis",
-            "Solo Homo sapiens"
+            "No",
+            "Solo podía caminar usando las manos",
+            "Sí"
         ],
-        correcta: 0
+        correcta: 2
     },
 
     {
         bloque: 3,
         imagen: "assets/material/erectus_03.jpg",
-        pregunta: "¿Qué herramienta está especialmente asociada al Achelense?",
+        pregunta: "¿Qué herramienta utilizaba Homo erectus?",
         opciones: [
-            "Bifaz",
-            "Computadora",
-            "Aguja de metal moderna"
+            "Bifaces de piedra",
+            "Computadoras",
+            "Teléfonos"
         ],
         correcta: 0
     },
 
     {
         bloque: 3,
-        imagen: "assets/material/erectus_04.png",
-        pregunta: "¿Qué característica aparece frecuentemente asociada con Homo erectus?",
+        imagen: "assets/material/erectus_04.jfif",
+        pregunta: "¿Qué elemento fue importante para Homo erectus?",
         opciones: [
-            "Uso o control del fuego",
-            "Agricultura industrial",
-            "Escritura"
+            "La electricidad",
+            "Los motores",
+            "El fuego"
+        ],
+        correcta: 2
+    },
+
+    {
+        bloque: 3,
+        imagen: "assets/material/erectus_05.jfif",
+        pregunta: "¿Homo erectus se desplazó fuera de África?",
+        opciones: [
+            "Sí",
+            "No",
+            "Nunca salió de un solo lugar"
         ],
         correcta: 0
     },
 
     {
         bloque: 3,
-        imagen: "assets/material/erectus_05.jpg",
-        pregunta: "¿Qué fósil es conocido como 'Turkana Boy'?",
+        imagen: "assets/material/erectus_06.png",
+        pregunta: "¿Para qué podía servir el fuego?",
         opciones: [
-            "Un Homo erectus/ergaster juvenil",
-            "Un Neandertal adulto",
-            "Un Homo sapiens medieval"
+            "Para usar internet",
+            "Para cocinar y calentarse",
+            "Para fabricar autos"
         ],
-        correcta: 0
-    },
-
-    {
-        bloque: 3,
-        imagen: "assets/material/erectus_06.jpg",
-        pregunta: "¿Qué tipo de herramienta caracteriza al Achelense?",
-        opciones: [
-            "Bifaces trabajados por ambas caras",
-            "Herramientas de plástico",
-            "Herramientas eléctricas"
-        ],
-        correcta: 0
+        correcta: 1
     },
 
 
     // ========================================================
     // NIVEL 5 - NEANDERTAL
-    // 6 preguntas
     // ========================================================
 
     {
         bloque: 4,
         imagen: "assets/material/neandertal_01.jpg",
-        pregunta: "¿Cuál es el nombre científico del Neandertal?",
+        pregunta: "¿Cuál era el nombre científico de los Neandertales?",
         opciones: [
-            "Homo neanderthalensis",
             "Homo habilis",
-            "Australopithecus afarensis"
+            "Homo neanderthalensis",
+            "Homo sapiens"
         ],
-        correcta: 0
+        correcta: 1
     },
 
     {
         bloque: 4,
         imagen: "assets/material/neandertal_02.jpg",
-        pregunta: "¿En qué regiones vivieron principalmente los Neandertales?",
+        pregunta: "¿Dónde vivieron principalmente los Neandertales?",
         opciones: [
-            "Europa y partes de Asia occidental",
-            "Australia exclusivamente",
-            "América del Sur exclusivamente"
+            "Europa y parte de Asia",
+            "Australia",
+            "América del Sur"
         ],
         correcta: 0
     },
@@ -401,45 +396,45 @@ const preguntas = [
         imagen: "assets/material/neandertal_03.jpg",
         pregunta: "¿Los Neandertales fabricaban herramientas?",
         opciones: [
-            "Sí",
             "No",
-            "Solo herramientas de plástico"
+            "Solo herramientas modernas",
+            "Sí"
         ],
-        correcta: 0
+        correcta: 2
     },
 
     {
         bloque: 4,
-        imagen: "assets/material/neandertal_04.png",
-        pregunta: "¿Qué tipo de herramientas está relacionado con los Neandertales?",
+        imagen: "assets/material/neandertal_04.jpg",
+        pregunta: "¿Los Neandertales utilizaban el fuego?",
         opciones: [
-            "Musteriense",
-            "Industrial",
-            "Digital"
+            "No",
+            "Sí",
+            "Nunca habían visto fuego"
         ],
-        correcta: 0
+        correcta: 1
     },
 
     {
         bloque: 4,
-        imagen: "assets/material/neandertal_05.jpg",
-        pregunta: "¿Los Neandertales utilizaron herramientas hechas de hueso?",
+        imagen: "assets/material/neandertal_05.jfif",
+        pregunta: "¿Los Neandertales vivieron durante una época muy fría?",
+        opciones: [
+            "No",
+            "Vivieron solamente en lugares tropicales",
+            "Sí"
+        ],
+        correcta: 2
+    },
+
+    {
+        bloque: 4,
+        imagen: "assets/material/neandertal_06.jfif",
+        pregunta: "¿Los Neandertales eran humanos antiguos?",
         opciones: [
             "Sí",
-            "No",
-            "Nunca"
-        ],
-        correcta: 0
-    },
-
-    {
-        bloque: 4,
-        imagen: "assets/material/neandertal_06.jpg",
-        pregunta: "¿Qué característica presenta generalmente el cráneo neandertal?",
-        opciones: [
-            "Una forma alargada y robusta",
-            "Un cráneo de dinosaurio",
-            "Un cráneo completamente redondo y pequeño"
+            "No, eran dinosaurios",
+            "No, eran plantas"
         ],
         correcta: 0
     },
@@ -447,67 +442,66 @@ const preguntas = [
 
     // ========================================================
     // NIVEL 6 - HOMO SAPIENS
-    // 5 preguntas
     // ========================================================
 
     {
         bloque: 5,
-        imagen: "assets/material/sapiens_01.jpg",
+        imagen: "assets/material/sapiens_01.jfif",
         pregunta: "¿Cuál es nuestro nombre científico?",
         opciones: [
-            "Homo sapiens",
             "Homo erectus",
-            "Homo habilis"
+            "Homo habilis",
+            "Homo sapiens"
         ],
-        correcta: 0
+        correcta: 2
     },
 
     {
         bloque: 5,
-        imagen: "assets/material/sapiens_02.jpg",
+        imagen: "assets/material/sapiens_02.webp",
         pregunta: "¿Qué especie corresponde a los humanos actuales?",
         opciones: [
+            "Australopithecus",
             "Homo sapiens",
-            "Homo neanderthalensis",
-            "Australopithecus"
+            "Homo habilis"
+        ],
+        correcta: 1
+    },
+
+    {
+        bloque: 5,
+        imagen: "assets/material/sapiens_03.jfif",
+        pregunta: "¿Los Homo sapiens podían fabricar herramientas?",
+        opciones: [
+            "Sí",
+            "No",
+            "Solo podían usar piedras sin modificarlas"
         ],
         correcta: 0
     },
 
     {
         bloque: 5,
-        imagen: "assets/material/sapiens_03.jpg",
-        pregunta: "¿Qué característica diferencia al cráneo de Homo sapiens de muchos homínidos anteriores?",
+        imagen: "assets/material/sapiens_04.jpg",
+        pregunta: "¿Qué podían crear los Homo sapiens?",
         opciones: [
-            "Una bóveda craneal más alta y redondeada",
-            "No tener mandíbula",
-            "Tener tres ojos"
+            "Solo piedras",
+            "Herramientas, pinturas y otros objetos",
+            "Nada"
         ],
-        correcta: 0
+        correcta: 1
     },
 
     {
         bloque: 5,
-        imagen: "assets/material/sapiens_04.png",
-        pregunta: "¿Qué tipo de herramientas se desarrollaron durante el Paleolítico Superior?",
+        imagen: "assets/material/sapiens_05.jfif",
+        pregunta: "¿Los humanos actuales pertenecemos a Homo sapiens?",
         opciones: [
-            "Herramientas de piedra más especializadas",
-            "Herramientas electrónicas",
-            "Herramientas de plástico"
+            "No",
+            "Solo algunas personas",
+            "Sí"
         ],
-        correcta: 0
-    },
-
-    {
-        bloque: 5,
-        imagen: "assets/material/sapiens_05.jpg",
-        pregunta: "¿Cuál de estas herramientas pertenece al Paleolítico Superior?",
-        opciones: [
-            "Raspador y perforador de piedra",
-            "Martillo neumático",
-            "Destornillador eléctrico"
-        ],
-        correcta: 0
+        correcta: 2
     }
 
 ];
@@ -526,6 +520,9 @@ let bloqueActual = 0;
 let bloqueado = false;
 
 let finalizado = false;
+
+let aciertosTotales = 0;
+let erroresTotales = 0;
 
 
 // ============================================================
@@ -590,6 +587,9 @@ function jugar() {
     bloqueado = false;
 
     finalizado = false;
+    // xd
+    aciertosTotales = 0;
+    erroresTotales = 0;
 
 
     var opciones = document.querySelector(".opciones");
@@ -633,7 +633,10 @@ function irAlRun() {
 function estadisticas() {
 
     document.getElementById("aciertos").innerText =
-        aciertosDelBloque;
+        aciertosTotales;
+
+    document.getElementById("errores").innerText =
+        erroresTotales;
 
     document.getElementById("etapa-actual").innerText =
         etapas[bloqueActual].nombre;
@@ -892,9 +895,14 @@ function responder(indexSeleccionado) {
         }
 
 
-        // Sumamos un acierto
+        // Sumamos un acierto al bloque
 
         aciertosDelBloque++;
+
+
+        // NUEVO: sumamos un acierto total
+
+        aciertosTotales++;
 
 
         actualizarUI();
@@ -944,6 +952,11 @@ function responder(indexSeleccionado) {
         contenedores[indexSeleccionado]
             .classList.add("incorrecta");
     }
+
+
+    // NUEVO: sumamos un error total
+
+    erroresTotales++;
 
 
     // Mostramos cuál era la correcta
