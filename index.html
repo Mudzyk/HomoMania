@@ -24,7 +24,7 @@
 <div class="contenedor-boton">
     <img src="assets/base_jugar.png" class="base-boton" draggable="false">
     <img src="assets/boton_jugar.png" class="boton-presionable" draggable="false">
-    <button class="boton-invisible" onclick="irASeleccion()"></button> <!-- ¡CAMBIO ACÁ! -->
+    <button class="boton-invisible" onclick="jugar()"></button>
 </div>
                 <!-- CREDITS -->
                 <div class="contenedor-boton btn-creditos">
@@ -131,13 +131,24 @@
 
     <!-- ESTADÍSTICAS -->
     <main id="stats" class="pantalla contenedor-sin-ventana">
-        <div class="contenido-juego-limpio">
-            <h2 class="titulo-ventana">ESTADÍSTICAS</h2>
-            <p class="texto-stats">Acertijos: <span id="aciertos">0</span></p>
-            <p class="texto-stats">Etapa: <span id="etapa-actual">Inicio</span></p>
-            <button class="boton-volver" onclick="volverMenu()">← VOLVER</button>
+    <div class="contenido-juego-limpio">
+        <h2 class="titulo-ventana">ESTADÍSTICAS</h2>
+
+        <div class="ventana-stats">
+            <p class="texto-stats">
+                ✅ Aciertos: <span id="aciertos">0</span>
+            </p>
+            <p class="texto-stats">
+                ❌ Errores: <span id="errores">0</span>
+            </p>
+            <p class="texto-stats">
+                🦴 Etapa: <span id="etapa-actual">Inicio</span>
+            </p>
         </div>
-    </main>
+
+        <button class="boton-volver" onclick="volverMenu()">← VOLVER</button>
+    </div>
+</main>
 
     <!-- CRÉDITOS -->
     <main id="creditos" class="pantalla contenedor-ventana">
